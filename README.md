@@ -4,6 +4,8 @@ Trata-se de uma aplicação para gerenciamento de conta voltada a um Banco.
 
 Este gerenciamento contempla, operações básicas como extrato, deposito, debito, etc. Também possui módulo de Cadastro usuários, Conta, e Autenticação.
 
+OBS.: Não foi possível implementar testes, decorrente de tempo. Ficando assim para futura implementação.
+
 ## Indíce
 
 - [Sobre]
