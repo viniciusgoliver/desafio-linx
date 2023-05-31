@@ -102,6 +102,10 @@ Caso queria executar a api no localhost, pare o container desafio-linx-api e exe
   yarn dev
 ```
 
+
+## APIS PARA REQUESTS
+
+
 ## API AUTH
 
 Abaixo se encontra as APIS para request.
