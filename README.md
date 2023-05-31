@@ -2,7 +2,7 @@
 
 Trata-se de uma aplicação para gerenciamento de conta voltada a um Banco.
 
-Este gerenciamento contempla, operações básicas como extrato, deposito, debito, etc. Também tem módulo de Cadastro usuários, Conta, e Autenticação.
+Este gerenciamento contempla, operações básicas como extrato, deposito, debito, etc. Também possui módulo de Cadastro usuários, Conta, e Autenticação.
 
 ## Indíce
 
