@@ -1,0 +1,55 @@
+version: '3.8'
+services:
+  desafio-linx-api:
+    container_name: desafio-linx-api
+    build: .
+    depends_on:
+      - desafio-linx-db
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/usr/src/app/
+      - /usr/src/app/node_modules
+    networks:
+      - desafio-linx-network
+
+  desafio-linx-db:
+    container_name: desafio-linx-db
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=desafio-linx
+    ports:
+      - 5432:5432
+    volumes:
+      - ./database-seed.sql:/docker-entrypoint-initdb.d/database-seed.sql
+    networks:
+      - desafio-linx-network
+
+  desafio-linx-pgadmin:
+    container_name: desafio-linx-pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "admin@localhost.com"
+      PGADMIN_DEFAULT_PASSWORD: "123456"
+    ports:
+      - 8080:80
+    depends_on:
+      - desafio-linx-db
+    networks:
+      - desafio-linx-network
+
+  desafio-linx-redis:
+    container_name: desafio-linx-redis
+    image: redis
+    restart: always
+    ports:
+      - 6379:6379
+    networks:
+      - desafio-linx-network
+
+networks:
+  desafio-linx-network:
+    driver: bridge
